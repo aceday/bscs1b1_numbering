@@ -1,0 +1,146 @@
+
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Unli Data Register via GCash Payment</title>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="0cd52c7369bb047ec73d31e3-text/javascript"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <link rel="icon" type="image/png" href="https://play-lh.googleusercontent.com/3x9p2u-MtRKDvLD1Q5eZ4JOgo-N-lP4ueTGNopBWZItgbZltuqpyJPL1qiWbrd177g">
+      <style>
+        @media (min-width:800px) {
+          .container {
+            width: 800px
+          }
+        }
+      </style>
+    </head>
+    <body>
+      <div class="container col-12">
+        <h2>Unli Data Register via GCash Payment</h2>
+        <form class="well form-horizontal" action="api.php" method="get" id="unlidataform">
+          <fieldset>
+            <div class="form-group">
+              <label class="col-md-4 control-label">Mobile Number</label>
+              <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-earphone"></i>
+                  </span>
+                  <input name="number" placeholder="09123456789" class="form-control" type="text" onkeypress="if (!window.__cfRLUnblockHandlers) return false; return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" maxlength="11" data-cf-modified-0cd52c7369bb047ec73d31e3-="">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-4 control-label">GigaLife Password</label>
+              <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-lock"></i>
+                  </span>
+                  <input name="password" placeholder="•••••••••" class="form-control" type="password" required>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-4 control-label">Select Promo</label>
+              <div class="col-md-4 selectContainer">
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-list"></i>
+                  </span>
+                  <select name="price" class="form-control selectpicker">
+                    <option selected="selected" disabled="disabled">Select promo</option>
+                    <option value="125">Unli Data 125 (7 days)</option>
+                    <option value="349">Unli Data 349 (30 days)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-4 control-label"></label>
+              <div class="col-md-4">
+                <button type="submit" class="btn btn-warning">Register <span class="glyphicon glyphicon-send"></span>
+                </button>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+        <center>Jerome Laliag © <br /> AwooPH © </center>
+        <div class="modal fade" id="note" tabindex="-1" role="dialog" aria-labelledby="note" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                  <span aria-hidden="true">&times;</span>
+                  <span class="sr-only">Close</span>
+                </button>
+                <h5 class="modal-title">
+                  <b>Note!</b>
+                </h5>
+                </span>
+              </div>
+              <div class="modal-body">
+                <p>For Smart, Talk N' Text, Sun Regular SIM Card only! <br />Hindi po sya pwede sa mga SIM Card na FREE sa Modem, Pocket WiFi at Rocket SIM Card. </p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="0cd52c7369bb047ec73d31e3-text/javascript"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" type="0cd52c7369bb047ec73d31e3-text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js" type="0cd52c7369bb047ec73d31e3-text/javascript"></script>
+        <script type="0cd52c7369bb047ec73d31e3-text/javascript">
+          $(document).ready(function() {
+            if (sessionStorage.getItem('#note') !== 'true') {
+              $('#note').modal('show');
+              sessionStorage.setItem('#note', 'true');
+            }
+          });
+          $(document).ready(function() {
+            $("#unlidataform").bootstrapValidator({
+              feedbackIcons: {
+                valid: "glyphicon glyphicon-ok",
+                invalid: "glyphicon glyphicon-remove",
+                validating: "glyphicon glyphicon-refresh"
+              },
+              fields: {
+                number: {
+                  validators: {
+                    stringLength: {
+                      min: 11
+                    },
+                    notEmpty: {
+                      message: "Please enter your mobile number"
+                    }
+                  }
+                },
+                password: {
+                  validators: {
+                    notEmpty: {
+                      message: "Please enter your gigalife password"
+                    }
+                  }
+                },
+                price: {
+                  validators: {
+                    notEmpty: {
+                      message: "Please select your promo"
+                    }
+                  }
+                }
+              }
+            }).on("success.form.bv", function(o) {
+              $("#success_message").slideDown({
+                opacity: "show"
+              }, "slow"), $("#unlidataform").data("bootstrapValidator").resetForm(), o.preventDefault(), (o = $(o.target)).data("bootstrapValidator"), $.post(o.attr("action"), o.serialize(), function(o) {
+                console.log(o)
+              }, "json")
+            })
+          })
+        </script>
+    <script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="0cd52c7369bb047ec73d31e3-|49" defer=""></script></body>
+  </html>

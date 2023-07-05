@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel='stylesheet' href="./../style.css">
+        <title>Buday - Technique in number conversion</title>
+        <style>
+            .contento
+            {
+                word-wrap: break-word;
+                width: 70%;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Technique in number conversion</h1>
+        <br>
+        <ol><font style="font-weight: bold;">Jump to:</font>
+            <li><a href="#html_dec_to_bin_1">Decimal to Binary</a></li>
+            <li><a href="#html_dec_to_oct_1">Decimal to Binary to Octal</a></li>
+            <li><a href="#html_dec_to_oct_2">Decimal to Octal</a></li>
+            <li><a href="#html_dec_to_hex">Decimal to Hexadecimal</a></li>
+            <li><a href="#html_bin_to_dec">Binary to Decimal</a></li>
+            <li><a href="#html_bin_to_oct">Binary to Octal</a></li>
+            <li><a href="#html_bin_to_hex">Binary to Hexadecimal</a></li>
+            <li><a href="#html_oct_to_dec">Octal to Decimal</a></li>
+            <li><a href="#html_oct_to_bin">Octal to Binary</a></li>
+            <li><a href="#html_oct_to_hex">Octal to Hexadecimal</a></li>
+            <li><a href="#html_hex_to_dec">Hexadecimal to Decimal</a></li>
+            <li><a href="#html_hex_to_bin">Hexadecimal to Binary</a></li>
+            <li><a href="#html_hex_to_oct">Hexadecimal to Octal</a></li>
+            <!-- <li><a href="#finaldo">Progress</a></li> -->
+        </ol>
+        <br>
+        
+        
+        <br>
+        <h4>Decimal:</h4>
+
+        <!-- Reference: https://www.cuemath.com/numbers/decimal-to-binary/ -->
+        <div class="contento">
+            <p id="html_dec_to_bin_1"><font style="text-decoration: underline;font-weight: bold;">Decimal to binary:</font><br>
+                - To convert numbers from decimal to binary, the given decimal number is divided
+                repeatedly by 2 and the remainders are noted down till we get 0 as the final quotient.
+                The following steps is considered as the decimal to binary formula that shows the 
+                procedure of conversion.
+                <ol>
+                    <li>Divide the given decimal number by 2 and note down the remainder.</li>
+                    <li>Now, divide the obtained quotient by 2, and note the remainder again.</li>
+                    <li>Repeat the above steps until you get 0 as the quotient.</li>
+                    <li>Now, write the remainders in such a way that the last remainder is written first,<br>
+                        followed by the rest in the reverse order.</li>
+                    <li>This can also be understood in another way which states that the Least Significant<br>
+                        Bit (LSB) of the binary number is at the top and the Most Significant Bit (MSB) is at<br>
+                        the bottom. This number is the binary value of the given decimal number.</li>
+                </ol>
+                Lets understand this with example.<br><br>
+                <strong>Example: </strong>Convert the decimal number 13<sub>10</sub> to binary.<br><br>
+                <strong>Solution: </strong>We will start dividing the given number <strong>(13)</strong> repeatedly by <strong>2</strong> until we get the quotient<br>
+                    as <strong>0</strong> We will note the remainders in order.<br><br>
+                <img src="./../images/dec-to-bin.png" style="background-color: white;" width="70%" height="70%">
+                <br><br>
+                <table border="2" style="background-color: rgb(54,54,54);color: white;text-align: center;">
+                    <tr>
+                        <td><strong>Division by 2</strong></td>
+                        <td><strong>Quotient</strong></td>
+                        <td><strong>Remainder</strong></td>
+                    </tr>
+                    <tr>
+                        <td>13 / 2</td>
+                        <td>6</td>
+                        <td>1 (LSB)</td>
+                    </tr>
+                    <tr>
+                        <td>6 / 2</td>
+                        <td>3</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>3 / 2</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1 / 2</td>
+                        <td>0</td>
+                        <td>1 (MSB)</td>
+                    </tr>
+                </table>
+                After noting the remainders, we will write them in such a way that the <strong>Most Significant Bit (MSB)</strong> 
+                of the binary number is written first, followed by the rest. Therefore, the binary equivalent for the 
+                given decimal number <strong>13<sub>10</sub></strong> is <strong>1101<sub>2</sub></strong>. 
+                This means that <strong>13<sub>10</sub> = 1101<sub>2</sub></strong>.
+            </p>
+        
+        
+            <!-- Reference: https://www.cuemath.com/numbers/decimal-to-octal/ -->
+            <p id="html_dec_to_oct_1"><br><font style="text-decoration: underline;font-weight: bold;">Decimal to Binary to octal:</font><br>
+                To convert decimal to octal number, there are two methods of conversions. The first method 
+                is to convert the decimal number to another number system i.e. binary or hexadecimal and finally 
+                convert it to octal. The second method is the direct method where we convert decimal to octal 
+                directly. Let see both the methods:<br>
+                <ol>
+                    <li>First, we convert the decimal number <strong>(45)<sub>10</sub></strong> to a binary number. We divide <strong>45</strong> by the binary base number <stong>i.e. 2</stong> until we obtain the quotient as <stong>1</stong>.</li>
+                    <img src="./../images/dec-to-oct-s1.png" height="50%" width="50%" style="background-color: white;">
+                    <p>Therefore, the decimal number <strong>(45)<sub>10</sub></strong> = <strong>(101101)<sub>2</sub></strong>.</p>
+                
+                    <li>Once we have obtained the binary number, we can convert this number to an octal number by using the binary to the octal conversion table.</li>
+                    <img src="./../images/dec-to-oct-s2.png" height="50%" width="50%" style="background-color: white;">
+                    <br><br>
+                    With the help of the above table, we first write the number into its 3-bit binary number as a zero needs to be added before digits to form the
+                     3-bit binary number. Hence, the 3-bit binary number is 101 and 101. Looking at the same table above we can convert these binary numbers to their
+                      octal numbers to derive the final number. Hence, the numbers are 5 and 5.
+                    <br>Therefore, <strong>(101101)<sub>2</sub> = (55)<sub>8</sub></strong>.
+                    <br><br>
+                    <li>Once we have obtained the octal number, the conversion from decimal to octal can be written as: 
+                        <strong>(45)<sub>10</sub> = (55)<sub>8</sub></strong></li>
+                    <br>
+                </ol>
+                <font id="html_dec_to_oct_2" style="text-decoration: underline;font-weight: bold;">Decimal to octal:</font><br>
+                In this method, a decimal number can be converted to a binary number by dividing the 
+                given number by 2 until we obtain a quotient as 1. The numbers are written from downwards to upwards. 
+                Once the binary number is obtained, we convert that into an octal number. Let us understand this using an 
+                example. Convert the decimal number <strong>(45)<sub>10</sub></strong> to an octal number
+                <ol>
+                    <li>Check if the decimal number is less than 8. If yes, the octal number is the same. If no, then proceed forward. In this case, 350 is more than 8 so let's go to step 2.</li>
+                    <br>
+                    <li>Divide 350 by 8 (octal base number). Note down the quotient and the remainder in the quotient-remainder form. Repeat this process (dividing the quotient again by 8) until we get the quotient to be less than 8.</li>
+                    <img src="./../images/dec-to-oct-s3.png" style="background-color:white" height="50%" width="50%"><br><br>
+                    <li>Once we obtain the quotient to be less than 8 we stop dividing to derive at the octal number. The octal number is considered by reading all the remainders and the last quotient from bottom to top.</li>
+                    <img src="./../images/dec-to-oct-s4.png" style="background-color: white;" height="50%" width="50%"><br>
+                    Therefore, <strong>(350)<sub>10</sub> = (536)<sub>8</sub></strong>.
+                </ol>
+            </p>
+            <!-- Reference: https://www.cuemath.com/numbers/decimal-to-hexadecimal/ -->
+            <p><font id="html_dec_to_hex" style="text-decoration: underline;font-weight: bold;">Decimal to Hexadecimal:</font><br>
+                In order to convert decimal to hexadecimal, we need to do some basic mathematical calculations using the following steps.<br>
+                <ul>
+                    <li><strong>Step 1: </strong>Divide the given decimal number system value by 16 and note the remainder.</li><br>
+                    <li><strong>Step 2: </strong>Divide the quotient by 16. Repeat this until you get a quotient equal to zero.</li><br>
+                    <li><strong>Step 3: </strong>Use the characters A, B, C, D, E, F in place of 10, 11, 12, 13, 14, 15 in the remainders respectively, wherever needed.</li><br>
+                    <li><strong>Step 4: </strong>Follow the reverse order pattern to arrange all the values of the remainder.</li><br>
+                </ul>
+                The Decimal to hexadecimal conversion formula of given numbers can be expressed as,<br><br>
+                <strong>P<sub>10</sub> = Q<sub>16</sub></strong><br>
+                where <strong>P</strong> is a <font style="text-decoration: underline;">decimal number</font> and <strong>Q</strong> is a <font style="text-decoration: underline;">hexadecimal number</font>.
+                <br><br>Let us understand how to convert a decimal number to a hexadecimal number with the help of the following example.
+                <br><br><strong>Example:</strong> Convert <font style="text-decoration: underline;font-weight: bold;">5386</font> to a <font style="text-decoration:underline;font-weight: bold;">hexadecimal number</font>.<br><br>
+                <img src="./../images/dec-to-hex-s1.png" style="background-color: white;" height="50%" width="50%"><br>
+                <br><strong>Solution: </strong>We will use the following steps to convert 5386 to hexadecimal.<br>
+                <ul>
+                    <li>Step 1: Divide 5386 by 16 to get 336 as the quotient and note the remainder 10.</li><br>
+                    <li>Step 2: Divide the quotient 336 obtained from the previous step by 16 to get 21 as the next quotient and note the remainder 0.</li><br>
+                    <li>Step 3: Divide the quotient 21 by 16 to get 1 as the new quotient and note the remainder 5.</li><br>
+                    <li>Step 4: Divide the quotient 1 by 16 to get 0 as the new quotient and note the remainder 1. Since we get 0 as the quotient, we stop here.</li>
+                    <li>Step 5: Now, reverse the remainders and note the combined number that it forms. We need to keep in mind that 10 is written as A in the hexadecimal number system.</li>
+                    <li>Step 6: After writing the remainders in the reverse order we get, 150A. Therefore, 5386 is expressed as 150A in the hexadecimal number system. This can be written as 
+                        <strong>(5386)<sub>10</sub></strong> is equal to <strong>(150A)<sub>16</sub></strong>.</li>
+                </ul>
+            </p>
+            <h4>Binary</h4>
+
+            <!-- Reference: https://www.cuemath.com/numbers/binary-to-decimal/ -->
+            <p id="html_bin_to_dec"><font style="text-decoration: underline;font-weight: bold;">Binary to Decimal:</font><br>
+                The positional notation method is one in which the value of a digit in a number is determined by a weight based on its position. This is
+                 achieved by multiplying each digit by the base <strong>(2)</strong> raised to the respective power depending upon the position of that digit in the number.
+                  The sum of all these values obtained for each digit gives the equivalent value of the given binary number in the decimal system. Let us understand
+                   this with the help of examples.
+                   <br<br>
+                   <strong>Example: </strong>Convert the binary number <strong>101101<sub>2</sub></strong> to a decimal number.<br><br>
+                    <strong>Solution: </strong>Observe the following steps to understand the binary to decimal conversion. In any binary number, the rightmost digit is called the 
+                    <font style='text-decoration: underline;font-weight: bold;'>'Least Significant Bit' (LSB)</font> and the left-most digit is called the 
+                    <font style='text-decoration: underline;font-weight: bold;'>'Most Significant Bit' (MSB)'</font>. For a binary number with <strong>'n'</strong> digits, the least<br><br>
+                    significant bit has a weight of <strong>2<sup>0</sup></strong> and the most significant bit has a weight of <strong>2n-1</strong>.
+                    <ul>
+                        <li><strong>Step 1:</strong> List out the <font style="text-decoration:underline">powers of 2</font> for all the digits starting from the rightmost position. The first power would be <strong>2<sup>0</sup></strong> and as we move on it will be <strong>2<sup>1</sup>, 2<sup>2</sup>, 2<sup>3</sup>, 2<sup>4</sup>, 2<sup>5</sup>,</strong>
+                            ... In the given example, there are 6 digits, therefore, starting from the rightmost digit, the weight of each position from the right is <strong>2<sup>0</sup>, 2<sup>1</sup>, 2<sup>2</sup>, 2<sup>3</sup>, 2<sup>4</sup>, 2<sup>5</sup>,</strong>.</li>
+                            <br><br><img src='./../images/bin-to-dec-s1.png' style="background-color:white" height="60%" width="60%"><br><br>
+                        <li><strong>Step 2: </strong>Now multiply each digit in the binary number starting from the right with its respective weight based on its position and evaluate the product. Observe the figure shown below to relate to the step. Finally, sum up all the products obtained for all the digits in the binary number.</li><br><br>
+                        <img src="./../images/bin-to-dec-s2.png" style="background-color: white" height="60%" width="60%"><br><br>
+                        <li><strong>Step 3: </strong>Now, express the binary number as a decimal number: <strong>101101<sub>2</sub> = 45<sub>10</sub></strong></li>
+
+
+                        </ul>
+            </p>
+            
+            <!-- Reference: https://www.cuemath.com/numbers/binary-to-octal-conversion/ -->
+            <p id="html_bin_to_oct"><font style="text-decoration: underline;font-weight: bold;">Binary to Octal:</font><br>
+                Since binary numbers are used in computers in the form of bits or bytes and octal numbers are used in electronics, direct
+                 conversion from binary to octal is not a method. There are two kinds of methods that are used in the binary to octal conversion.
+                 
+                <br><br>
+                <strong>Binary to Octal by grouping</strong><br>
+                Here are the steps that need to be followed for this method.<br>
+                <ul>
+                    <li><strong>Step 1: </strong>Identify the binary number i.e. the digits should be either 0 or 1 with base 2.</li>
+                    <li><strong>Step 2: </strong>Group all the 0 to 1 in a set of three starting from the right side.</li>
+                    <li><strong>Step 3: </strong>Add 0's to the left if it does not form a group of three. Each group must have three digits.</li>
+                    <li><strong>Step 4: </strong>Look at the binary to octal conversion table to get the accurate numbers.</li>
+                    <li><strong>Step 5: </strong>Once obtained, that number is the octal number.</li>
+                </ul>
+                <img src="./../images/bin-to-oct-s1.png" style="background-color: white;" height="60%" width="60%"><br><br>
+                <strong>For example: </strong>Convert the binary number <strong>(01110101)<sub>2</sub></strong> to an octal number.<br><br>
+                <strong>Solution: </strong>Using the grouping method, set the binary number into three numbers in each group.<br><br>
+                <strong>(01110101)<sub>2</sub> = 001 110 101 = 1 6 5 </strong><br><br>
+                <strong>(01110101)<sub>2</sub> = (165)<sub>8</sub></strong>
+            </p>
+            <p id="html_bin_to_hex"><font style="text-decoration: underline;font-weight: bold;">Binary to Hexadecimal:</font><br>
+                To convert binary to hexadecimal numbers, we need to use both the base numbers i.e 2 for binary and 16 for hexadecimal. The 
+                conversion process happens in two methods, the first method is by using the binary to hexadecimal conversion table where 1 
+                hexadecimal number is equivalent to 4 binary numbers. The second method is by converting the hexadecimal number to a decimal
+                 number then convert it to a binary. Let us see both the methods in detail.<br><br>
+                 <strong>Binary to Hexadecimal (With Conversion Table)</strong><br>
+                 One of the simplest and easiest methods to convert from binary to hexadecimal is by using the conversion table. Since binary 
+                 numbers only have 0 and 1 that are called bits and hexadecimal numbers are also positional number system, every 4 bits or 
+                 numbers is equivalent to 1 hexadecimal number that includes the alphabets A - F as well. The conversion table is as follows:<br><br>
+                 <img src="./../images/bin-to-hex-s1.png" style="background-color: white;" height="60%" width="60%"><br><br>
+                 Let us look at an example for a better understanding.<br>
+                 For example: Convert <strong>(00110110101)<sub>2</sub></strong> to Hexadecimal.<br><br>
+                 We first group the numbers in a set of 4. Since every 4 digit in binary becomes one 1 digit in hexadecimal. Add zeros to
+                  the left of the last digit if there aren't enough digits to make a set of four:<br><br>
+                  <strong>0001 1011 0101</strong><br><br>
+                  By looking at the conversion table, we can find the equivalent hexadecimal number.<br><br>
+                  <strong>0001 = 1 , 1011 = B , 0101 = 5</strong><br><br>
+                  We arrange the numbers together to get the final number.<br><br>
+                  Therefore, <strong>(00110110101)<sub>2</sub> = (1B5)<sub>16</sub></strong>.<br><br>
+            </p>
+            <h4>Octal</h4>
+            <p id="html_oct_to_dec"><font style="text-decoration: underline;font-weight: bold;">Octal to Decimal:</font><br>
+                As with any other conversion in the number system, octal to decimal conversion is also done by using its base number. To convert
+                 octal to decimal, we need to multiply the octal digits with the power of 8 starting from the right-hand side and gradually decreasing 
+                 to zero to sum up, all the products. Here are the steps to convert a number from octal to decimal:<br>
+                 <ul>
+                    <li><strong>Step 1: </strong>Since an octal number only uses digits from 0 to 7, we first arrange the octal number with the power of 8.</li>
+                    <li><strong>Step 2: </strong>We evaluate all the power of 8 values such as 80 is 1, 81 is 8, etc., and write down the value of each octal number.</li>
+                    <li><strong>Step 3: </strong>Once the value is obtained, we multiply each number.</li>
+                    <li><strong>Step 4: </strong>Final step is to add the product of all the numbers to obtain the decimal number.</li>
+                </ul>
+                Let us look at an example, convert <strong>(140)<sub>8</sub></strong> into a decimal number.
+            
+            </p>
+            <!-- Reference: https://www.cuemath.com/numbers/octal-to-binary/ -->
+            <p id="html_oct_to_bin"><font style="text-decoration: underline;font-weight: bold;">Octal to Binary:</font><br>
+                Observe the octal to binary table given below which will help you to convert octal numbers to binary numbers. 
+                The octal to binary table shows the equivalent number of each octal digit to binary, for example, <strong>0</strong> in octal is 
+                equivalent to <strong>000</strong> in binary, <strong>1</strong> in octal is equivalent to <strong>001</strong> in binary, 
+                <strong>2<sub>8</sub></strong> is the same as <strong>010<sub>2</sub></strong>, and so on.<br><br>
+                <img src="./../images/oct-to-bin-s1.png" style="background-color: white;" height="70%" width="70%"><br>
+                Theres was an easier and less complicated one, is to directly convert a number from octal to binary by referring
+                 to the octal to binary table given above. In this method, we convert every digit of the given octal number to its 
+                 binary equivalent by referring to the above chart. For example, using this method we can directly write <strong>3<sub>8</sub></strong> as <strong>011<sub>2</sub></strong>,
+                  <strong>5<sub>8</sub></strong> as <strong>101<sub>2</sub></strong>, etc.<br><br>
+                  Let us convert the same number <strong>58<sub>8</sub></strong> from octal to binary using the direct method. There are two digits in this number, <strong>5</strong> and <strong>6</strong>. Referring to the above octal to binary chart:
+                    <br><br><Strong>5<sub>8</sub> → 101<sub>2</sub> <br>68 → 1102</Strong><br><br>
+                    By combining these two, we will get, <strong>56<sub>8</sub> = 101110<sub>2</sub></strong>. Observe the image given below for your reference.<br>
+                    <img src="./../images/oct-to-bin-s2.png" style="background-color:white" height="60%" width="60%"><br>
+            </p>
+            <!-- Reference: https://www.log2base2.com/number-system/how-to-convert-octal-to-hexadecimal-with-example.html -->
+            <p id="html_oct_to_hex"><font style="text-decoration: underline;font-weight: bold;">Octal to Hexadecimal:</font><br>
+                Using the below two methods, we can convert the octal number system into the hexadecimal number system.
+                <ol>
+                    <li>Convert the octal number into binary and then convert the binary into hexadecimal.</li>
+                    <li>Convert the octal number into decimal and then convert the decimal into hexadecimal.</li>
+                </ol>
+                Let's convert the octal number into the hexadecimal number system.<br><br>
+                Let's convert <strong>(56)<sub>8</sub></strong> into hexadecimal<br>
+                <ol>
+                    <li>Convert <strong>(56)<sub>8</sub></strong> into Binary</li>
+                    In order to convert the octal number into binary, we need to express every octal value using 3 binary bits.<br>
+                    Binary equivalent of <strong>5</strong> is <strong>(101)<sub>2</sub></strong>.<br>
+                    Binary equivalent of <strong>6</strong> is <strong>(110)<sub>2</sub></strong>.<br>
+                    <strong>(56)<sub>8</sub></strong><br>
+                    <strong>= (101) (110)</strong><br>
+                    <strong>= (101 110)<sub>2</sub></strong><br><br>
+                    <li>Convert <strong>(101110)<sub>2</sub></strong> into Hexadecimal</li>
+                    In order to convert the binary number into hexadecimal, we need to group every 4 binary bits and calculate the value<font>[From left to right]</font>.<br>
+                    <strong>(101110)<sub>2</sub></strong> in hexadecimal<br>
+                    <strong>= (101110)<sub>2</sub><br>
+                            = (10) (1110) , grouping by 4<br>
+                            = (2)(14)<br>
+                            = (2E)<sub>16</sub></strong><br><br>
+                            <strong>14</strong> equivalent in hexadecimal is <strong>E</strong>.
+
+                            This method is relatively easy compared to the below method.<br>
+                        </ol>
+            </p>
+            <br><h4>Hexadecimal</h4>
+            
+            <!-- Reference: https://byjus.com/maths/hex-to-decimal/ -->
+            <p id="html_hex_to_dec"><font style="text-decoration: underline;font-weight: bold;">Hexadecimal to Decimal:</font><br>
+                As we know, number systems can be converted from one base to another. 
+                Thus, we can convert hexadecimal numbers to decimal easily. This number system conversion can be done as explained in the example given below:<br>
+                <br><strong>Example:</strong><br>
+                Convert 7CF (hex) to decimal.<br><br>
+                <strong>Solution:</strong><br>
+                Given hexadecimal number is 7CF.<br>
+                In hexadecimal system,<br>
+                7 = 7<br>C = 12<br>F = 15<br><br>
+                To convert this into a decimal number system, multiply each digit with the powers of 16 starting from units place of the number.<br>
+                7CF = (7 × 16<sup>2</sup>) + (12 × 16<sup>1</sup>) + (15 × 16<sup>0</sup>)<br>
+                = (7 × 256) + (12 × 16) + (15 × 1)<br>
+                = 1792 + 192 + 15<br>
+                = 1999<br><br>
+                From this, the rule can be defined for the conversion from hex numbers to decimal numbers.
+                <br>Suppose below is the hex number with n digits: dn<sub>-1</sub> … d<sub>3</sub> d<sub>2</sub> d<sub>1</sub> d<sub>0</sub><br>
+                Multiply each digit of the hex number with its corresponding powers of 16 and add them such as:<br>
+                d<sub>n-1</sub> × 16<sub>n-1</sub> + … + d<sub>3</sub> × 16<sup>3</sup> + d<sub>2</sub> × 16<sup>2</sup> + d<sub>1</sub> × 16<sup>1</sup> + d<sub>0</sub> × 16<sup>0</sup><br>
+                Thus, the resultant number will be taken as base 10 or decimal number system.<br>
+                <table border="2px">
+                    <tr>
+                        <td>d<sub>n-1</sub> … d<sub>3</sub> d<sub>2</sub> d<sub>1</sub> d<sub>0</sub> (hex) = d<sub>n-1</sub> × 16<sup>n-1</sup> + … + d<sub>3</sub> × 16<sup>3</sup> + d<sub>2</sub> × 16<sup>2</sup> + d<sub>1</sub> × 16<sup>1</sup> + d<sub>0</sub> × 16<sup>0</sup> (decimal)</td>
+                    </tr>
+                </table><br>
+                <font style="font-size:20px">Hex to Decimal Table</font>
+                <table border="2px">
+                    <tr>
+                        <td style="font-weight:bold;">Hexadecimal</td>
+                        <td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        <td>8</td><td>9</td><td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold;">Decimal</td>
+                        <td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        <td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td>
+                    </tr>
+                </table>
+                <br>This table will help in representing the digits and letters individually in the large numbers in base 16 system as explained above.<br><br>
+                <strong>Solved Examples</strong><br>
+                Let us have a look at the examples of conversion of numbers from hexadecimal<em>(base 16)</em> to the <em>base 10</em> number system, with detailed explanations.<br>
+                <strong>Example 1:</strong><br><br>
+                Convert (1DA6)16 to decimal.<br><br>
+                <strong>Solution:</strong><br>
+                    (1DA6)16<br>
+                    Here: 1 = 1, D = 13, A = 10, 6 = 6<br>
+                    Thus,<br>
+                    (1DA6)16 = (1 × 16<sup>3</sup>) + (13 × 16<sup>2</sup>) + (10 × 16<sup>1</sup>) + (6 × 16<sup>0</sup>)<br>
+                    = (1 × 4096) + (13 × 256) + (10 × 16) + (6 × 1)<br>
+                    = 4096 + 3328 + 160 + 6<br>
+                    = 7590<br>
+                    Therefore, (1DA6)<sub>16</sub> = (7590)<sub>10</sub><br><br>
+                <strong>Example 2:</strong><br><br>
+                    Convert (E8B)<sub>16</sub> to decimal system.<br><br>
+                <strong>Solution:</strong><br>
+                    (E8B)<sub>16</sub><br>
+                    Here,<br>
+                    E = 14<br>
+                    8 = 8<br>
+                    B = 11<br>
+                    Thus, (E8B)<sub>16</sub> = (14 × 16<sub>2</sub>) + (8 × 16<sub>1</sub>) + (11 × 16<sub>0</sub>)<br>
+                    = (14 × 256) + (8 × 16) + (11 × 1)<br>
+                    = 3584 + 128 + 11<br>
+                    = 3723<br>
+                    Therefore, (E8B)<sub>16</sub> = (3723)<sub>10</sub><br>
+
+
+
+            </p>
+            <p>
+            <p id="html_hex_to_bin"><font style="text-decoration: underline;font-weight: bold;">Hexadecimal to Binary:</font><br>
+                To convert hexadecimal to a binary number we need to first convert the hexadecimal number to a decimal number to finally convert 
+                it to a binary number. One of the most important aspects to remember here is every hexadecimal number will produce 4 binary digits.
+                 The hexadecimal to binary conversion can occur in two methods - First, after the hexadecimal is converted to a decimal number, we 
+                 convert the decimal number by using the division process to obtain the binary number. Second, we can directly use the hexadecimal to
+                  decimal to binary conversion table. Let us look at the steps of both methods.<br>
+                  <br><font style="font-weight:bold;">Convert Hexadecimal to Decimal to Binary (with conversion table)</font><br>
+            This method is a direct procedure by just looking at the conversation table we can convert hexadecimal to binary. The steps are fairly simple, lets look at them:<br><br>
+                <ul>
+                    <li><strong>Step 1: </strong>Write the hexadecimal</li>
+                    <li><strong>Step 2: </strong>Find the equivalent decimal of each of the digits by looking at the conversion table.</li>
+                    <li>Step 3: Once the decimal number is obtained, looking at the same table we can convert it to a binary.</li>
+                    <li>Step 4: Combine all the binary numbers together to obtain the final binary number.</li>
+                </ul>
+                Let us look at an example for a better understanding. Convert hexadecimal <strong>(E5B)<sub>16</sub></strong> to binary.<br>
+                <ul>
+                    <li><strong>Step 1: </strong>We have the hexadecimal as <strong>(E5B)<sub>16</sub></strong>.</li>
+                    <li><strong>Step 2: </strong>Looking at the conversion table, find the equivalent of each digit.</li>
+                    E = (14)<sub>10</sub> , 5 = (5)<sub>10</sub> , B = (11)<sub>10</sub>
+                    <li><strong>Step 3: </strong>Once the decimal of each digit is obtained, looking at the conversion table convert each decimal number to binary.</li>
+                    (14)<sub>10</sub> = (1110)<sub>2</sub><br>(5)<sub>10</sub> = (0101)<sub>2</sub><br>(11)<sub>10</sub> = (1011)<sub>2</sub><br>
+                    <li><strong>Step 4: </strong>Combine all the binary numbers together to obtain the final one.</li>
+                    Therefore, (E5B)<sub>16</sub> = (1110 0101 1011)<sub>2</sub>.
+                </ul>
+                <img src="./../images/hex_to_bin_s1.png" style="background-color:white" height="60%" width="60%"><br>
+            <p id="html_hex_to_oct"><font style="text-decoration: underline;font-weight: bold;">Hexadecimal to Octal:</font><br><br>
+                This just similar for Octal to Hexadecimal: visit here <a href="#html_oct_to_hex">Octal to Hexadecimal</a>
+            </p>
+            </p>
+                <p id="finaldo">
+                
+
+                
+
+            </p>
+        </div>
+        
+    </body>
+</html>
